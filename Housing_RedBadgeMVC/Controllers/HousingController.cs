@@ -79,7 +79,9 @@ namespace Housing_RedBadgeMVC.Controllers
 
 
         // Housing Edit - Post
-        public ActionResult Edit(int id, HousingDetail model)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, HousingUpdate model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -91,7 +93,27 @@ namespace Housing_RedBadgeMVC.Controllers
 
             var service = CreateHousingService();
 
-            if (service.)
+            if (service.UpdateHousing(model))
+            {
+                TempData["SaveResult"] = "Housing was updated";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Housing could not be updated");
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteHousing(int id)
+        {
+            var service = CreateHousingService();
+            service.DeleteHousing(id);
+
+            TempData["SaveResult"] = "Housing was deleted";
+
+            return RedirectToAction("Index");
         }
 
 

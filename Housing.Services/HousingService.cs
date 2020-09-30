@@ -102,6 +102,26 @@ namespace Housing_RedBadgeMVC.Services
             }
         }
 
+        public bool UpdateHousing(HousingUpdate model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Housing
+                    .Single(e => e.Id == model.Id );
+                // && e.OwnerId == _userId
+
+                entity.Name = model.Name;
+                entity.Address = model.Address;
+                entity.UnitsAvailable = model.UnitsAvailable;
+                entity.AcceptVoucher = model.AcceptVoucher;
+                entity.SectionType = model.SectionType;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         // Delete
         public bool DeleteHousing(int id)
         {

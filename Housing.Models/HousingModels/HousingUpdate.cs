@@ -9,6 +9,7 @@ namespace Housing_RedBadgeMVC.Models
 {
     public class HousingUpdate
     {
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public string Address { get; set; }
