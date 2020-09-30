@@ -32,7 +32,7 @@ namespace Housing_RedBadgeMVC.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Housing> Housing { get; set; }
+        public DbSet<Housing> Housings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

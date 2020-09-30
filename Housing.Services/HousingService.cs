@@ -19,21 +19,21 @@ namespace Housing_RedBadgeMVC.Services
         }
 
         // Post
-        public bool CreateHousing(HousingCreate housing)
+        public bool CreateHousing(HousingCreate model)
         {
             var entity =
                 new Housing()
                 {
-                    Name = housing.Name,
-                    Address = housing.Address,
-                    UnitsAvailable = housing.UnitsAvailable,
-                    AcceptVoucher = housing.AcceptVoucher,
-                    SectionType = housing.SectionType
+                    Name = model.Name,
+                    Address = model.Address,
+                    UnitsAvailable = model.UnitsAvailable,
+                    AcceptVoucher = model.AcceptVoucher,
+                    SectionType = model.SectionType
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Housing.Add(entity);
+                ctx.Housings.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -45,7 +45,7 @@ namespace Housing_RedBadgeMVC.Services
             {
                 var query =
                     ctx
-                    .Housing.ToList()
+                    .Housings.ToList()
                     .Select(
                         e =>
                         new HousingListItem
@@ -67,7 +67,7 @@ namespace Housing_RedBadgeMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Housing.Single(e => e.Id == id);
+                var entity = ctx.Housings.Single(e => e.Id == id);
                 var detailedHousing = new HousingDetail
                 {
                     Id = entity.Id,
@@ -86,7 +86,7 @@ namespace Housing_RedBadgeMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                Housing housing = ctx.Housing.Find(id);
+                Housing housing = ctx.Housings.Find(id);
                 if (housing == null)
                 {
                     return 2;
@@ -108,7 +108,7 @@ namespace Housing_RedBadgeMVC.Services
             {
                 var entity =
                     ctx
-                    .Housing
+                    .Housings
                     .Single(e => e.Id == model.Id );
                 // && e.OwnerId == _userId
 
@@ -127,8 +127,8 @@ namespace Housing_RedBadgeMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Housing.Single(e => e.Id == id);
-                ctx.Housing.Remove(entity);
+                var entity = ctx.Housings.Single(e => e.Id == id);
+                ctx.Housings.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
