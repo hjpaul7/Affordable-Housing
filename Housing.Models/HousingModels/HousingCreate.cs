@@ -10,6 +10,8 @@ namespace Housing_RedBadgeMVC.Models
 {
     public class HousingCreate
     {
+        public int HousingId { get; set; }
+
         [Required]
         public string Name { get; set; }
 

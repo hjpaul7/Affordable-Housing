@@ -50,7 +50,7 @@ namespace Housing_RedBadgeMVC.Services
                         e =>
                         new HousingListItem
                         {
-                            Id = e.Id,
+                            Id = e.HousingId,
                             Name = e.Name,
                             Address = e.Address,
                             UnitsAvailable = e.UnitsAvailable,
@@ -67,10 +67,10 @@ namespace Housing_RedBadgeMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Housings.Single(e => e.Id == id);
+                var entity = ctx.Housings.Single(e => e.HousingId == id);
                 var detailedHousing = new HousingDetail
                 {
-                    Id = entity.Id,
+                    Id = entity.HousingId,
                     Name = entity.Name,
                     Address = entity.Address,
                     UnitsAvailable = entity.UnitsAvailable,
@@ -109,7 +109,7 @@ namespace Housing_RedBadgeMVC.Services
                 var entity =
                     ctx
                     .Housings
-                    .Single(e => e.Id == model.Id );
+                    .Single(e => e.HousingId == model.Id );
                 // && e.OwnerId == _userId
 
                 entity.Name = model.Name;
@@ -127,7 +127,7 @@ namespace Housing_RedBadgeMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Housings.Single(e => e.Id == id);
+                var entity = ctx.Housings.Single(e => e.HousingId == id);
                 ctx.Housings.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

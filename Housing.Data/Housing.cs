@@ -10,7 +10,7 @@ namespace Housing_RedBadgeMVC.Data
     public class Housing
     {
         [Key]
-        public int Id { get; set; }
+        public int HousingId { get; set; }
 
         [Required]
         public string Name { get; set; }

@@ -4,9 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Housing.Models.ApplicationModels
+namespace Housing_RedBadgeMVC.Models.ApplicationModels
 {
     public class ApplicationUpdate
     {
+        public string HousingId { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public double MonthlyIncome { get; set; }
     }
 }

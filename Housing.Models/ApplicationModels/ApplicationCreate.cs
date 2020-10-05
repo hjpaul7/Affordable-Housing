@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Housing.Models.ApplicationModels
+namespace Housing_RedBadgeMVC.Models.ApplicationModels
+
 {
     public class ApplicationCreate
     {
@@ -17,6 +18,9 @@ namespace Housing.Models.ApplicationModels
 
         [Required]
         public string LastName { get; set; }
+
+        [Required]
+        public double MonthlyIncome { get; set; }
 
 
     }
