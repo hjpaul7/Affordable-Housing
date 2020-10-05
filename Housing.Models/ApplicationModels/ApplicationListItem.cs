@@ -13,6 +13,9 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
         [Display(Name = "Housing ID")]
         public string HousingId { get; set; }
 
+        [Display(Name = "Applicant ID")]
+        public string ApplicantId { get; set; }
+
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

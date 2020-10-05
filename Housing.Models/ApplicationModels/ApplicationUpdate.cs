@@ -8,6 +8,7 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
 {
     public class ApplicationUpdate
     {
+        public int Id { get; set; }
         public string HousingId { get; set; }
 
         public string FirstName { get; set; }

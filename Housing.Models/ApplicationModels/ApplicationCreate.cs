@@ -13,6 +13,8 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
         [Required]
         public string HousingId { get; set; }
 
+        public string ApplicantId { get; set; }
+
         [Required]
         public string FirstName { get; set; }
 

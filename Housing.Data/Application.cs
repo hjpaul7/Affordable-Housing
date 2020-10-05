@@ -10,6 +10,9 @@ namespace Housing_RedBadgeMVC.Data
 {
     public class Application
     {
+        [Key]
+        public int Id { get; set;
+        }
         // Housing ID
         [ForeignKey(nameof(HousingAppId))]
         public string HousingId { get; set; }
