@@ -55,7 +55,20 @@ namespace Housing.Services
             }
         }
 
-        // No Get Rating by ID because that doesn't make sense to me
+        public RatingDetail GetRatingDetail(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.SafetyRatings.Single(e => e.Id == id);
+                var detailedRating = new RatingDetail
+                {
+                    HousingId = entity.HousingId,
+                    ApplicantId = entity.ApplicantId,
+                    Rating = entity.Rating
+                };
+                return detailedRating;
+            }
+        }
 
 
         // Update
