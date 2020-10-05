@@ -10,7 +10,7 @@ namespace Housing.Models.RatingModels
     public class RatingListItem
     {
         [Display(Name = "Housing ID")]
-        public string HousingId { get; set; }
+        public int HousingId { get; set; }
 
         [Display(Name = "User")]
         public string ApplicantId { get; set; }

@@ -10,9 +10,12 @@ namespace Housing_RedBadgeMVC.Data
 {
    public class SafetyRating
     {
+        [Key]
+        public int Id { get; set; }
+
         // Housing ID
         [ForeignKey(nameof(HousingAppId))]
-        public string HousingId { get; set; }
+        public int HousingId { get; set; }
         public virtual Housing HousingAppId { get; set; }
 
         // Application User ID

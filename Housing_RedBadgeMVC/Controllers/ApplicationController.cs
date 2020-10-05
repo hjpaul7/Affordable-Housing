@@ -106,7 +106,7 @@ namespace Housing_RedBadgeMVC.Controllers
 
 
         // Delete by Id
-        [[HttpPost]]
+        [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteApplication(int id)

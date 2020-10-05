@@ -34,6 +34,7 @@ namespace Housing_RedBadgeMVC.Data
 
         public DbSet<Housing> Housings { get; set; }
         public DbSet<Application> Applications { get; set; }
+        public DbSet<SafetyRating> SafetyRatings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
