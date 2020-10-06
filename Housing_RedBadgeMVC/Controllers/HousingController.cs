@@ -69,6 +69,7 @@ namespace Housing_RedBadgeMVC.Controllers
             var model =
                 new HousingUpdate
                 {
+                    HousingId = detail.HousingId,
                     Name = detail.Name,
                     Address = detail.Address,
                     UnitsAvailable = detail.UnitsAvailable,
@@ -101,6 +102,14 @@ namespace Housing_RedBadgeMVC.Controllers
             }
 
             ModelState.AddModelError("", "Housing could not be updated");
+            return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateHousingService();
+            var model = svc.GetHousingDetail(id);
+
             return View(model);
         }
 

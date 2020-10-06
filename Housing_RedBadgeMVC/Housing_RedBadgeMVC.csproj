@@ -240,10 +240,14 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Housing\Index.cshtml" />
     <Content Include="Views\Housing\Create.cshtml" />
+    <Content Include="Views\Housing\Details.cshtml" />
+    <Content Include="Views\Housing\Edit.cshtml" />
+    <Content Include="Views\Housing\Delete.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Application\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Application\" />
     <Folder Include="Views\Rating\" />
   </ItemGroup>
   <ItemGroup>

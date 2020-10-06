@@ -9,6 +9,8 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
 {
     public class ApplicationListItem
     {
+        [Display(Name = "Application ID")]
+        public int Id { get; set; }
 
         [Display(Name = "Housing ID")]
         public int HousingId { get; set; }
