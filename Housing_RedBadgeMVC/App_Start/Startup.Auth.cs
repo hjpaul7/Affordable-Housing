@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Housing_RedBadgeMVC.Models;
+using Housing_RedBadgeMVC.Data;
 
 namespace Housing_RedBadgeMVC
 {

@@ -31,6 +31,7 @@ namespace Housing_RedBadgeMVC.Services
                 };
             using (var ctx = new ApplicationDbContext())
             {
+                var users = ctx.Users.Find(model.ApplicantId);
                 ctx.Applications.Add(entity);
                 return ctx.SaveChanges() == 1;
             }

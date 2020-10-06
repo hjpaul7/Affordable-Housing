@@ -10,7 +10,6 @@ namespace Housing_RedBadgeMVC.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Housing_RedBadgeMVC.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Housing_RedBadgeMVC.Data.ApplicationDbContext context)

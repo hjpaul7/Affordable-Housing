@@ -7,13 +7,13 @@ namespace Housing_RedBadgeMVC.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class IdFix : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(IdFix));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010060140565_IdFix"; }
+            get { return "202010062045443_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

@@ -57,17 +57,9 @@
     <Compile Include="Application.cs" />
     <Compile Include="Housing.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202009302159269_InitialCreate.cs" />
-    <Compile Include="Migrations\202009302159269_InitialCreate.Designer.cs">
-      <DependentUpon>202009302159269_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010060109152_First.cs" />
-    <Compile Include="Migrations\202010060109152_First.Designer.cs">
-      <DependentUpon>202010060109152_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010060140565_IdFix.cs" />
-    <Compile Include="Migrations\202010060140565_IdFix.Designer.cs">
-      <DependentUpon>202010060140565_IdFix.cs</DependentUpon>
+    <Compile Include="Migrations\202010062045443_InitialMigration.cs" />
+    <Compile Include="Migrations\202010062045443_InitialMigration.Designer.cs">
+      <DependentUpon>202010062045443_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,14 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009302159269_InitialCreate.resx">
-      <DependentUpon>202009302159269_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010060109152_First.resx">
-      <DependentUpon>202010060109152_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010060140565_IdFix.resx">
-      <DependentUpon>202010060140565_IdFix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010062045443_InitialMigration.resx">
+      <DependentUpon>202010062045443_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
