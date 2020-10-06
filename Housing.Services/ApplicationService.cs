@@ -10,9 +10,9 @@ namespace Housing_RedBadgeMVC.Services
 {
    public class ApplicationService
     {
-        private readonly Guid _userId;
+        private readonly string _userId;
 
-        public ApplicationService(Guid userId)
+        public ApplicationService(string userId)
         {
             _userId = userId;
         }
@@ -24,14 +24,14 @@ namespace Housing_RedBadgeMVC.Services
                 new Application()
                 {
                     HousingId = model.HousingId,
-                    ApplicantId = model.ApplicantId,
+                    //ApplicantId = model.ApplicantUser,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     MonthlyIncome = model.MonthlyIncome
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                var users = ctx.Users.Find(model.ApplicantId);
+                entity.ApplicantUser = ctx.Users.Where(e => e.Id == _userId).First();
                 ctx.Applications.Add(entity);
                 return ctx.SaveChanges() == 1;
             }

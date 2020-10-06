@@ -18,7 +18,11 @@ namespace Housing_RedBadgeMVC.Data
         public int HousingId { get; set; }
         public virtual Housing HousingAppId { get; set; }
 
-        // Application User ID
+        //// Application User ID
+        //[ForeignKey(nameof(ApplicantUser))]
+        //public string ApplicantId { get; set; }
+        //public virtual ApplicationUser ApplicantUser { get; set; }
+
         [ForeignKey(nameof(ApplicantUser))]
         public string ApplicantId { get; set; }
         public virtual ApplicationUser ApplicantUser { get; set; }
