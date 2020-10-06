@@ -1,12 +1,12 @@
-﻿using Housing.Models.RatingModels;
-using Housing_RedBadgeMVC.Data;
+﻿using Housing_RedBadgeMVC.Data;
+using Housing_RedBadgeMVC.Models.RatingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Housing.Services
+namespace Housing_RedBadgeMVC.Services
 {
    public class RatingService
     {

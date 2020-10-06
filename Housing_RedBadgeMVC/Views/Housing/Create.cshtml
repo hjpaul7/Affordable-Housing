@@ -1,4 +1,4 @@
-﻿@model Housing_RedBadgeMVC.Models.HousingCreate
+﻿@model Housing_RedBadgeMVC.Models.HousingModels.HousingCreate
 
 
 @using (Html.BeginForm()) 
@@ -40,8 +40,6 @@
                 @Html.ValidationMessageFor(model => model.UnitsAvailable, "", new { @class = "text-danger" })
             </div>
         </div>
-
-      
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

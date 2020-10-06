@@ -11,7 +11,7 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
     public class ApplicationCreate
     {
         [Required]
-        public string HousingId { get; set; }
+        public int HousingId { get; set; }
 
         public string ApplicantId { get; set; }
 

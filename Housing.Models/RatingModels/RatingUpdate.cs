@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Housing.Models.RatingModels
+namespace Housing_RedBadgeMVC.Models.RatingModels
 {
   public class RatingUpdate
     {

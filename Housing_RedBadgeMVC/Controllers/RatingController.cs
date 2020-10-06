@@ -1,5 +1,6 @@
-﻿using Housing.Models.RatingModels;
-using Housing.Services;
+﻿
+using Housing_RedBadgeMVC.Models.RatingModels;
+using Housing_RedBadgeMVC.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;

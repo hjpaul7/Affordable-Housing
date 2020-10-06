@@ -10,7 +10,7 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
     public class ApplicationDetail
     {
         [Display(Name = "Housing ID")]
-        public string HousingId { get; set; }
+        public int HousingId { get; set; }
 
         [Display(Name = "Applicant ID")]
         public string ApplicantId { get; set; }

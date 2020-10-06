@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Housing.Models.RatingModels
+namespace Housing_RedBadgeMVC.Models.RatingModels
 {
     public class RatingDetail
     {
         [Display(Name = "Housing ID")]
-        public string HousingId { get; set; }
+        public int HousingId { get; set; }
 
         [Display(Name = "User")]
         public string ApplicantId { get; set; }

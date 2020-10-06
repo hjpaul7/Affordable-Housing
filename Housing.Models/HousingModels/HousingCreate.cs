@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Housing_RedBadgeMVC.Data.Housing;
 
-namespace Housing_RedBadgeMVC.Models
+namespace Housing_RedBadgeMVC.Models.HousingModels
 {
     public class HousingCreate
     {

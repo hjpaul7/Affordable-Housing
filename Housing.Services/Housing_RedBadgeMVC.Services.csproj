@@ -7,7 +7,7 @@
     <ProjectGuid>{7507F87D-8751-4EBE-8E62-48CAB8A7A3BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Housing.Services</RootNamespace>
+    <RootNamespace>Housing_RedBadgeMVC.Services</RootNamespace>
     <AssemblyName>Housing.Services</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

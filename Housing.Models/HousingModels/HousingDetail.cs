@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using static Housing_RedBadgeMVC.Data.Housing;
 
-namespace Housing_RedBadgeMVC.Models
+namespace Housing_RedBadgeMVC.Models.HousingModels
 {
     public class HousingDetail
     {
         [Display(Name = "Housing ID")]
-        public int Id { get; set; }
+        public int HousingId { get; set; }
 
         [Display(Name = "Name")]
         public string Name { get; set; }

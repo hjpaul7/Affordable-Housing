@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Housing.Services
+namespace Housing_RedBadgeMVC.Services
 {
    public class ApplicationService
     {

@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using static Housing_RedBadgeMVC.Data.Housing;
 
-namespace Housing_RedBadgeMVC.Models
+namespace Housing_RedBadgeMVC.Models.HousingModels
 {
     public class HousingUpdate
     {
-        public int Id { get; set; }
+        public int HousingId { get; set; }
         public string Name { get; set; }
 
         public string Address { get; set; }

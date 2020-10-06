@@ -1,4 +1,5 @@
 ﻿using Housing_RedBadgeMVC.Models;
+using Housing_RedBadgeMVC.Models.HousingModels;
 using Housing_RedBadgeMVC.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -85,7 +86,7 @@ namespace Housing_RedBadgeMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.Id != id)
+            if (model.HousingId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);

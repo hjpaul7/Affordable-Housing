@@ -1,6 +1,6 @@
 ﻿
 using Housing_RedBadgeMVC.Data;
-using Housing_RedBadgeMVC.Models;
+using Housing_RedBadgeMVC.Models.HousingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +50,7 @@ namespace Housing_RedBadgeMVC.Services
                         e =>
                         new HousingListItem
                         {
-                            Id = e.HousingId,
+                            HousingId = e.HousingId,
                             Name = e.Name,
                             Address = e.Address,
                             UnitsAvailable = e.UnitsAvailable,
@@ -70,7 +70,7 @@ namespace Housing_RedBadgeMVC.Services
                 var entity = ctx.Housings.Single(e => e.HousingId == id);
                 var detailedHousing = new HousingDetail
                 {
-                    Id = entity.HousingId,
+                    HousingId = entity.HousingId,
                     Name = entity.Name,
                     Address = entity.Address,
                     UnitsAvailable = entity.UnitsAvailable,
@@ -109,7 +109,7 @@ namespace Housing_RedBadgeMVC.Services
                 var entity =
                     ctx
                     .Housings
-                    .Single(e => e.HousingId == model.Id );
+                    .Single(e => e.HousingId == model.HousingId );
                 // && e.OwnerId == _userId
 
                 entity.Name = model.Name;
