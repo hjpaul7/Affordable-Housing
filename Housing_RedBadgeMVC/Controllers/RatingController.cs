@@ -114,6 +114,15 @@ namespace Housing_RedBadgeMVC.Controllers
         }
 
 
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateRatingService();
+            var model = svc.GetRatingDetail(id);
+
+            return View(model);
+        }
+
+
         private RatingService CreateRatingService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
