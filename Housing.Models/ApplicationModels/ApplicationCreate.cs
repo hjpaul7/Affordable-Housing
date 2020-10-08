@@ -25,6 +25,9 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
         [Required]
         public double MonthlyIncome { get; set; }
 
+        [Required]
+        public int UnitsRequested { get; set; }
+
 
     }
 }

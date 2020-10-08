@@ -44,15 +44,20 @@ namespace Housing_RedBadgeMVC.Controllers
             {
                 return View(model);
             }
+            var housing = _db.Housings.Find(model.HousingId);
 
             var service = CreateApplicationService();
 
             if (service.CreateApplication(model))
             {
+                housing.UnitsAvailable -= model.UnitsRequested;
+                if(_db.SaveChanges() == 1)
+                {
+
                 TempData["SaveResult"] = "The Application was succesfully created";
                 return RedirectToAction("Index");
+                }
             };
-
             ModelState.AddModelError("", "Your Application could not be added");
 
             return View(model);

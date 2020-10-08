@@ -29,7 +29,6 @@ namespace Housing_RedBadgeMVC.Data
         // need to remove set and change logic for get
         public bool IsSafe { get; set; }
 
-
         [Required]
         public Section SectionType { get; set; }
 
