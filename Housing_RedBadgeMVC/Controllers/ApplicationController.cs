@@ -15,7 +15,7 @@ namespace Housing_RedBadgeMVC.Controllers
         // GET: Application
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = User.Identity.GetUserId();
             var service = new ApplicationService(userId);
             var model = service.GetApplication();
 
@@ -105,6 +105,16 @@ namespace Housing_RedBadgeMVC.Controllers
         }
 
 
+        // Delete
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateApplicationService();
+            var model = svc.GetApplicationDetail(id);
+
+            return View(model);
+        }
+
+
         // Delete by Id
         [HttpPost]
         [ActionName("Delete")]
@@ -122,7 +132,7 @@ namespace Housing_RedBadgeMVC.Controllers
 
         private ApplicationService CreateApplicationService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = User.Identity.GetUserId();
             var service = new ApplicationService(userId);
             return service;
         }

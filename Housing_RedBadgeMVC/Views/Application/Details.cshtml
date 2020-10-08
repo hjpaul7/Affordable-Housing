@@ -1,0 +1,58 @@
+﻿@model Housing_RedBadgeMVC.Models.ApplicationModels.ApplicationDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ApplicationDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HousingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HousingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlyIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlyIncome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

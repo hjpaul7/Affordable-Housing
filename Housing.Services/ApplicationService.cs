@@ -50,6 +50,7 @@ namespace Housing_RedBadgeMVC.Services
                         e =>
                         new ApplicationListItem
                         {
+                            Id = e.Id,
                             HousingId = e.HousingId,
                             ApplicantId = e.ApplicantId,
                             FirstName = e.FirstName,
@@ -69,6 +70,7 @@ namespace Housing_RedBadgeMVC.Services
                 var entity = ctx.Applications.Single(e => e.Id == id);
                 var detailedApplication = new ApplicationDetail
                 {
+                    Id = entity.Id,
                     HousingId = entity.HousingId,
                     ApplicantId = entity.ApplicantId,
                     FirstName = entity.FirstName,
