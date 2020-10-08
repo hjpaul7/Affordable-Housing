@@ -21,6 +21,8 @@ namespace Housing_RedBadgeMVC.Data
         [Required]
         public int UnitsAvailable { get; set; }
 
+        public virtual ICollection<Application> Applications { get; set; } = new List<Application>();
+
         [Required]
         public Voucher AcceptVoucher { get; set; }
 

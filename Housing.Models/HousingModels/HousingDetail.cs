@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Housing_RedBadgeMVC.Models.ApplicationModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -31,6 +32,6 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         [Display(Name = "Section Type")]
         public Section SectionType { get; set; }
 
-        public List<HousingListItem> HousingListItems { get; set; } = new List<HousingListItem>();
+        public List<ApplicationListItem> ApplicationListItems { get; set; } = new List<ApplicationListItem>();
     }
 }

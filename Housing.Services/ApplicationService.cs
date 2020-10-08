@@ -24,11 +24,12 @@ namespace Housing_RedBadgeMVC.Services
                 new Application()
                 {
                     HousingId = model.HousingId,
-                    //ApplicantId = model.ApplicantUser,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     MonthlyIncome = model.MonthlyIncome
+
                 };
+
             using (var ctx = new ApplicationDbContext())
             {
                 entity.ApplicantUser = ctx.Users.Where(e => e.Id == _userId).First();

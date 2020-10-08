@@ -44,6 +44,7 @@ namespace Housing_RedBadgeMVC.Controllers
             {
                 return View(model);
             }
+
             var service = CreateApplicationService();
 
             if (service.CreateApplication(model))

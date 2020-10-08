@@ -1,5 +1,6 @@
 ﻿
 using Housing_RedBadgeMVC.Data;
+using Housing_RedBadgeMVC.Models.ApplicationModels;
 using Housing_RedBadgeMVC.Models.HousingModels;
 using System;
 using System.Collections.Generic;

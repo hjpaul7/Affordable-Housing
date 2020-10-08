@@ -26,5 +26,8 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
 
         [Display(Name = "Monthly Income")]
         public double MonthlyIncome { get; set; }
+
+        [Display(Name = "Is available")]
+        public bool IsAvailable { get; set; }
     }
 }
