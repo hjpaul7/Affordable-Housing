@@ -16,7 +16,7 @@ namespace Housing_RedBadgeMVC.Controllers
         // GET: Rating
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = User.Identity.GetUserId();
             var service = new RatingService(userId);
             var model = service.GetRating();
 
@@ -125,7 +125,7 @@ namespace Housing_RedBadgeMVC.Controllers
 
         private RatingService CreateRatingService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = User.Identity.GetUserId();
             var service = new RatingService(userId);
             return service;
         }

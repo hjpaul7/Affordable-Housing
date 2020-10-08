@@ -10,9 +10,9 @@ namespace Housing_RedBadgeMVC.Services
 {
    public class RatingService
     {
-        private readonly Guid _userId;
+        private readonly string _userId;
 
-        public RatingService(Guid userId)
+        public RatingService(string userId)
         {
             _userId = userId;
         }
@@ -24,11 +24,12 @@ namespace Housing_RedBadgeMVC.Services
                 new SafetyRating()
                 {
                     HousingId = model.HousingId,
-                    ApplicantId = model.ApplicantId,
+                    //ApplicantId = model.ApplicantId,
                     Rating = model.Rating
                 };
             using (var ctx = new ApplicationDbContext())
             {
+                entity.ApplicantUser = ctx.Users.Where(e => e.Id == _userId).First();
                 ctx.SafetyRatings.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
@@ -46,6 +47,7 @@ namespace Housing_RedBadgeMVC.Services
                         e =>
                         new RatingListItem
                         {
+                            Id = e.Id,
                             HousingId = e.HousingId,
                             ApplicantId = e.ApplicantId,
                             Rating = e.Rating
@@ -62,6 +64,7 @@ namespace Housing_RedBadgeMVC.Services
                 var entity = ctx.SafetyRatings.Single(e => e.Id == id);
                 var detailedRating = new RatingDetail
                 {
+                    Id = entity.Id,
                     HousingId = entity.HousingId,
                     ApplicantId = entity.ApplicantId,
                     Rating = entity.Rating

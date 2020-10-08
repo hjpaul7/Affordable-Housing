@@ -9,6 +9,9 @@ namespace Housing_RedBadgeMVC.Models.RatingModels
 {
     public class RatingDetail
     {
+        [Display(Name ="ID")]
+        public int Id { get; set; }
+
         [Display(Name = "Housing ID")]
         public int HousingId { get; set; }
 
