@@ -61,6 +61,10 @@
     <Compile Include="Migrations\202010062045443_InitialMigration.Designer.cs">
       <DependentUpon>202010062045443_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010082033276_Viewbag.cs" />
+    <Compile Include="Migrations\202010082033276_Viewbag.Designer.cs">
+      <DependentUpon>202010082033276_Viewbag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SafetyRating.cs" />
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202010062045443_InitialMigration.resx">
       <DependentUpon>202010062045443_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010082033276_Viewbag.resx">
+      <DependentUpon>202010082033276_Viewbag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿
+using Housing_RedBadgeMVC.Data;
 using Housing_RedBadgeMVC.Models.RatingModels;
 using Housing_RedBadgeMVC.Services;
 using Microsoft.AspNet.Identity;
@@ -13,6 +14,8 @@ namespace Housing_RedBadgeMVC.Controllers
     [Authorize]
     public class RatingController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Rating
         public ActionResult Index()
         {
@@ -26,6 +29,8 @@ namespace Housing_RedBadgeMVC.Controllers
         // Get
         public ActionResult Create()
         {
+            var housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
+            ViewBag.Housings = housings;
             return View();
         }
 

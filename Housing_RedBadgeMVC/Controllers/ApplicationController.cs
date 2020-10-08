@@ -1,4 +1,5 @@
-﻿using Housing_RedBadgeMVC.Models.ApplicationModels;
+﻿using Housing_RedBadgeMVC.Data;
+using Housing_RedBadgeMVC.Models.ApplicationModels;
 using Housing_RedBadgeMVC.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,7 +12,10 @@ namespace Housing_RedBadgeMVC.Controllers
 {
     [Authorize]
     public class ApplicationController : Controller
+
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Application
         public ActionResult Index()
         {
@@ -26,6 +30,8 @@ namespace Housing_RedBadgeMVC.Controllers
         // Get
         public ActionResult Create()
         {
+            var housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
+            ViewBag.Housings = housings;
             return View();
         }
 

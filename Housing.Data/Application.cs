@@ -35,5 +35,7 @@ namespace Housing_RedBadgeMVC.Data
 
         [Required]
         public double MonthlyIncome { get; set; }
+
+        public virtual Housing Housings { get; set; }
     }
 }

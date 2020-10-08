@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -18,6 +19,8 @@ namespace Housing_RedBadgeMVC.Data
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual ICollection<Housing> Housings { get; set; } = new List<Housing>();
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
