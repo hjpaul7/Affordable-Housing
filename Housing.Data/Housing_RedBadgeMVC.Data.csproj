@@ -73,6 +73,22 @@
     <Compile Include="Migrations\202010082157100_Backtracked.Designer.cs">
       <DependentUpon>202010082157100_Backtracked.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010090139364_IsSafe.cs" />
+    <Compile Include="Migrations\202010090139364_IsSafe.Designer.cs">
+      <DependentUpon>202010090139364_IsSafe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010090158426_IsSafeTwo.cs" />
+    <Compile Include="Migrations\202010090158426_IsSafeTwo.Designer.cs">
+      <DependentUpon>202010090158426_IsSafeTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010090159527_IsSafeThree.cs" />
+    <Compile Include="Migrations\202010090159527_IsSafeThree.Designer.cs">
+      <DependentUpon>202010090159527_IsSafeThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010090222527_EnumUpdate.cs" />
+    <Compile Include="Migrations\202010090222527_EnumUpdate.Designer.cs">
+      <DependentUpon>202010090222527_EnumUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SafetyRating.cs" />
@@ -93,6 +109,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010082157100_Backtracked.resx">
       <DependentUpon>202010082157100_Backtracked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010090139364_IsSafe.resx">
+      <DependentUpon>202010090139364_IsSafe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010090158426_IsSafeTwo.resx">
+      <DependentUpon>202010090158426_IsSafeTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010090159527_IsSafeThree.resx">
+      <DependentUpon>202010090159527_IsSafeThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010090222527_EnumUpdate.resx">
+      <DependentUpon>202010090222527_EnumUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

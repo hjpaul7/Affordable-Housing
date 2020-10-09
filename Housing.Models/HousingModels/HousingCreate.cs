@@ -19,6 +19,8 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         [Required]
         public int UnitsAvailable { get; set; }
 
+        public bool IsSafe { get; set; }
+
         [Required]
         public Voucher AcceptVoucher { get; set; }
 

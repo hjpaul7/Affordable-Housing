@@ -12,6 +12,7 @@ namespace Housing_RedBadgeMVC.Services
 {
     public class HousingService
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         private readonly Guid _userId;
 
         public HousingService(Guid userId)
@@ -29,9 +30,10 @@ namespace Housing_RedBadgeMVC.Services
                     Address = model.Address,
                     UnitsAvailable = model.UnitsAvailable,
                     AcceptVoucher = model.AcceptVoucher,
-                    SectionType = model.SectionType
+                    SectionType = model.SectionType,
                 };
 
+            
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Housings.Add(entity);
@@ -44,6 +46,7 @@ namespace Housing_RedBadgeMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+
                 var query =
                     ctx
                     .Housings.ToList()
@@ -56,15 +59,20 @@ namespace Housing_RedBadgeMVC.Services
                             Address = e.Address,
                             UnitsAvailable = e.UnitsAvailable,
                             AcceptVoucher = e.AcceptVoucher,
-                            SectionType = e.SectionType
+                            SectionType = e.SectionType,
+                            IsSafe = e.IsSafe
                         }
                         );
-                return query.ToArray(); 
+                
+                return query.ToArray();
+
             }
         }
 
-        // Get Housing by ID
-        public HousingDetail GetHousingDetail(int id)
+
+
+    // Get Housing by ID
+    public HousingDetail GetHousingDetail(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -76,7 +84,8 @@ namespace Housing_RedBadgeMVC.Services
                     Address = entity.Address,
                     UnitsAvailable = entity.UnitsAvailable,
                     AcceptVoucher = entity.AcceptVoucher,
-                    SectionType = entity.SectionType
+                    SectionType = entity.SectionType,
+                    IsSafe = entity.IsSafe
                 };
                 return detailedHousing;
             }
