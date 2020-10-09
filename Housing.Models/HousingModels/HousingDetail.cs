@@ -26,7 +26,7 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         [Display(Name = "Accepts Voucher")]
         public Voucher AcceptVoucher { get; set; }
 
-        [Display(Name = "Is Safe")]
+        [Display(Name = "Safe")]
         public bool IsSafe { get; set; }
 
         [Display(Name = "Section Type")]

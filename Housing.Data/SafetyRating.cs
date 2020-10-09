@@ -25,5 +25,7 @@ namespace Housing_RedBadgeMVC.Data
 
         [Required]
         public decimal Rating { get; set; }
+
+        public DateTime Posted { get; set; }
     }
 }

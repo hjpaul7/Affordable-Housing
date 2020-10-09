@@ -17,15 +17,19 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
         //public string ApplicantUser { get; set; }
 
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
+        [Display(Name = "Monthly Income")]
         public double MonthlyIncome { get; set; }
 
         [Required]
+        [Display(Name = "Units Requested")]
         public int UnitsRequested { get; set; }
 
 

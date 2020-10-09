@@ -25,10 +25,16 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         [Display(Name = "Accepts Voucher")]
         public Voucher AcceptVoucher { get; set; }
 
-        [Display(Name = "Is Safe")]
+        [Display(Name = "Safe")]
         public bool IsSafe { get; set; }
 
         [Display(Name = "Section Type")]
         public Section SectionType { get; set; }
+        public string Section { get
+            {
+                if (SectionType == Data.Housing.Section.Section8)
+                    return "Section 8";
+                return "Section 42";
+            } }
     }
 }

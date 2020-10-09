@@ -17,14 +17,18 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         public string Address { get; set; }
 
         [Required]
+        [Display(Name = "Units Available?")]
         public int UnitsAvailable { get; set; }
 
+        [Display(Name = "Safe")]
         public bool IsSafe { get; set; }
 
         [Required]
+        [Display(Name = "Accepts Vouchers")]
         public Voucher AcceptVoucher { get; set; }
 
         [Required]
+        [Display(Name = "Section Type")]
         public Section SectionType { get; set; }
     }
 }

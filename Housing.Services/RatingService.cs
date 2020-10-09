@@ -25,7 +25,8 @@ namespace Housing_RedBadgeMVC.Services
                 {
                     HousingId = model.HousingId,
                     //ApplicantId = model.ApplicantId,
-                    Rating = model.Rating
+                    Rating = model.Rating,
+                    Posted = DateTime.Now
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,7 +51,8 @@ namespace Housing_RedBadgeMVC.Services
                             Id = e.Id,
                             HousingId = e.HousingId,
                             ApplicantId = e.ApplicantId,
-                            Rating = e.Rating
+                            Rating = e.Rating,
+                            Posted = e.Posted
                         }
                         );
                 return query.ToArray();
@@ -67,7 +69,8 @@ namespace Housing_RedBadgeMVC.Services
                     Id = entity.Id,
                     HousingId = entity.HousingId,
                     ApplicantId = entity.ApplicantId,
-                    Rating = entity.Rating
+                    Rating = entity.Rating,
+                    Posted = entity.Posted
                 };
                 return detailedRating;
             }

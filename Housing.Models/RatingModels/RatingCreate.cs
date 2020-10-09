@@ -16,5 +16,7 @@ namespace Housing_RedBadgeMVC.Models.RatingModels
 
         [Required]
         public decimal Rating { get; set; }
+
+        public DateTime Posted { get; set; }
     }
 }

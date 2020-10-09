@@ -20,5 +20,8 @@ namespace Housing_RedBadgeMVC.Models.RatingModels
 
         [Display(Name = "Rating")]
         public decimal Rating { get; set; }
+
+        [Display(Name = "Date Posted")]
+        public DateTime Posted { get; set; }
     }
 }
