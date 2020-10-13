@@ -6,13 +6,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>HousingUpdate</h4>
+        <h5 style="margin-top: 20px">Editing "@Html.DisplayFor(model => model.Name)"</h5>
         <hr />
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         @Html.HiddenFor(model => model.HousingId)
-
+    <div class="edit-container" style="background-color: lightgray">
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -56,9 +56,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                @*<input type="submit" value="Save" class="btn btn-default" />*@
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
+    </div>
     </div>
 }
 

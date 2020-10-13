@@ -3,40 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Affordable Housing IN</title>
+    <link rel="stylesheet" href="~/Content/Site.css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <nav class="navbar navbar-expand-lg bg-dark" >
+            <div class="container">
+                <div class="navbar-header">
+                    @Html.ActionLink("IN Affordable Housing", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style="color: white"})
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="mr-auto navbar-nav">
+                        <li class="nav-item nav-link">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @style = "color: white" })</li>
+                        <li class="nav-item nav-link">@Html.ActionLink("Housing", "Index", "Housing", new { area = "" }, new { @style = "color: white" })</li>
+                        <li class="nav-item nav-link">@Html.ActionLink("Apply", "Index", "Application", new { area = "" }, new { @style = "color: white" })</li>
+                        <li class="nav-item nav-link">@Html.ActionLink("Rate Housing", "Index", "Rating", new { area = "" }, new { @style = "color: white" })</li>
+                        <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @style = "color: white" })</li>
+                        <li class="nav-item nav-link">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @style = "color: white" })</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Housing", "Index", "Housing")</li>
-                    <li>@Html.ActionLink("Apply", "Index", "Application")</li>
-                    <li>@Html.ActionLink("Rate Housing", "Index", "Rating")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Affordable Housing IN</p>
         </footer>
     </div>
 

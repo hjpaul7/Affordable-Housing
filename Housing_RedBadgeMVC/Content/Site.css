@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +21,45 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.create-housing-container {
+    margin-top: 20px;
+    background-color: black;
+    opacity: 0.6;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.main-container {
+    background-color: #f9c105;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
+.card-container {
+    padding: 1em;
+}
+
+
+.housing-card {
+    border: solid 1px black;
+}
+
+.edit-container {
+    background-color: black;
+    opacity: 0.8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.action-link {
+    text-decoration: none;
+    color: white;
+}
+
+.action-link:hover {
+    text-decoration: none;
 }

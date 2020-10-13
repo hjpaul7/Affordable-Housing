@@ -1,63 +1,44 @@
 ﻿@model IEnumerable<Housing_RedBadgeMVC.Models.HousingModels.HousingListItem>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<div class="create-housing-container">
+<p style="color: white">
+    Here you can view current available housing in central Indiana detailing: Address, Units Available, Unemployment Voucher Acceptance, Affordable Section Type, Safety Rating. If you would like to add a new Housing listing, please click @Html.ActionLink("Add Housing", "Create", new { @style = "text-decoration: none" } )
 </p>
-<table class="table">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.HousingId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UnitsAvailable)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsSafe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AcceptVoucher)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SectionType)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-<tr>
-    @*<td>
-        @Html.DisplayFor(modelItem => item.HousingId)
-    </td>*@
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Address)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UnitsAvailable)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsSafe)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AcceptVoucher)
-    </td>
-    <td>
-            @Html.DisplayFor(modelItem => item.Section)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.HousingId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.HousingId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.HousingId })
-    </td>
-</tr>
-}
+</div>
 
-</table>
+<div class="row">
+    @foreach (var item in Model)
+    { 
+
+    <div class="col-md-4">
+        <div class="card-container">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://d2kcmk0r62r1qk.cloudfront.net/imageSponsors/xlarge/2017_11_28_04_29_25_bsr_group_6250_lennox_exterior.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Name)
+                            @Html.DisplayFor(modelItem => item.IsSafe)
+                        </h5>
+                    </div>
+
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Address)</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Units Available: @Html.DisplayFor(modelItem => item.UnitsAvailable)</li>
+                    <li class="list-group-item">Accepts Vouchers: @Html.DisplayFor(modelItem => item.AcceptVoucher)</li>
+                    <li class="list-group-item">Type: @Html.DisplayFor(modelItem => item.Section)</li>
+                </ul>
+                <div class="card-body" style="text-align: center">
+                    @*<a href="#" class="card-link">@Html.ActionLink("Edit", "Edit", new { id = item.HousingId })</a>*@
+                    @Html.Partial("_Edit", item)
+                    @*<a href="#" class="card-link">@Html.ActionLink("Details", "Details", new { id = item.HousingId }, new { @style = "padding-left: 10px" })</a>*@
+                    @Html.Partial("_Details", item)
+                    <a href="#" class="card-link">@Html.ActionLink("Delete", "Delete", new { id = item.HousingId })</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
