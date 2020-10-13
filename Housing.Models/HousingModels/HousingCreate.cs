@@ -30,5 +30,7 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         [Required]
         [Display(Name = "Section Type")]
         public Section SectionType { get; set; }
+
+        public byte[] Image { get; set; }
     }
 }

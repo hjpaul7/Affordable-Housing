@@ -29,18 +29,38 @@ namespace Housing_RedBadgeMVC.Controllers
             return View();
         }
 
+
+        public ActionResult RetrieveImage(int id)
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new HousingService(userId);
+            byte[] cover = service.GetImageFromDB(id);
+            if (cover != null)
+            {
+                return File(cover, "image/jpg");
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         // Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(HousingCreate model)
         {
+            HttpPostedFileBase file = Request.Files["ImageData"];
+
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
            var service = CreateHousingService();
 
-           if (service.CreateHousing(model))
+
+           if (service.CreateHousing(file, model))
             {
                 TempData["SaveResult"] = "The Housing was succesfully created";
                 return RedirectToAction("Index");
@@ -74,7 +94,8 @@ namespace Housing_RedBadgeMVC.Controllers
                     Address = detail.Address,
                     UnitsAvailable = detail.UnitsAvailable,
                     AcceptVoucher = detail.AcceptVoucher,
-                    SectionType = detail.SectionType
+                    SectionType = detail.SectionType,
+                    Image = detail.Image
                 };
             return View(model);
         }
@@ -85,6 +106,8 @@ namespace Housing_RedBadgeMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, HousingUpdate model)
         {
+            HttpPostedFileBase file = Request.Files["ImageData"];
+
             if (!ModelState.IsValid) return View(model);
 
             if (model.HousingId != id)
@@ -95,7 +118,7 @@ namespace Housing_RedBadgeMVC.Controllers
 
             var service = CreateHousingService();
 
-            if (service.UpdateHousing(model))
+            if (service.UpdateHousing(file, model))
             {
                 TempData["SaveResult"] = "Housing was updated";
                 return RedirectToAction("Index");

@@ -30,6 +30,8 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
 
         [Display(Name = "Section Type")]
         public Section SectionType { get; set; }
+
+        public byte[] Image { get; set; }
         public string Section { get
             {
                 if (SectionType == Data.Housing.Section.Section8)

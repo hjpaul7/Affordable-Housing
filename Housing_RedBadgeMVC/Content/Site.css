@@ -1,6 +1,5 @@
 ﻿body {
     padding-bottom: 20px;
-
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -30,6 +29,12 @@ textarea {
     border-radius: 3px;
     padding: 10px;
 }
+
+.container-text {
+    opacity: 1;
+}
+
+
 
 .main-container {
     background-color: #f9c105;
@@ -62,4 +67,23 @@ textarea {
 
 .action-link:hover {
     text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+}
+
+.nav-hover:hover {
+    background-color: lightcoral;
+    text-decoration: none;
+}
+
+.link-style {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+.link-style:hover {
+    text-decoration: none;
+    color: white;
 }

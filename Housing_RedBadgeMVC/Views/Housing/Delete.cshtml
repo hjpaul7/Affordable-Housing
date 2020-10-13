@@ -4,61 +4,61 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="create-housing-container">
+    <p style="color: white; font-size: 12px;">
+        Here you can delete <b>Housing ID @Html.DisplayFor(model => model.HousingId)</b>, are you sure you want to delete this housing?
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>HousingDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HousingId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HousingId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UnitsAvailable)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UnitsAvailable)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsSafe)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsSafe)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.HousingId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.HousingId)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Address)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Address)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.UnitsAvailable)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.UnitsAvailable)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.IsSafe)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.IsSafe)
+    </dd>
+
+</dl>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

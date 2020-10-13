@@ -14,53 +14,58 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-                <div class="modal-body" style="text-align: left">
+            <div class="modal-body" style="text-align: left">
 
-                    @using (Html.BeginForm("Edit", "Housing", new { id = Model.HousingId }))
-                    {
-                        @Html.AntiForgeryToken()
+                @using (Html.BeginForm("Edit", "Housing", new { id = Model.HousingId }))
+                {
+                    @Html.AntiForgeryToken()
 
 
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @Html.HiddenFor(model => model.HousingId)
+                    @Html.HiddenFor(model => model.HousingId)
 
-                        <div class="form-group">
-                            <small class="form-text text-muted">@Html.LabelFor(model => model.Name)</small>
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                        </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted">@Html.LabelFor(model => model.Name)</small>
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
 
-                        <div class="form-group">
-                            <small class="form-text text-muted">@Html.LabelFor(model => model.Address)</small>
-                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                        </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted">@Html.LabelFor(model => model.Address)</small>
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
 
-                        <div class="form-group">
-                            <small class="form-text text-muted">@Html.LabelFor(model => model.UnitsAvailable)</small>
-                            @Html.EditorFor(model => model.UnitsAvailable, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.UnitsAvailable, "", new { @class = "text-danger" })
-                        </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted">@Html.LabelFor(model => model.UnitsAvailable)</small>
+                        @Html.EditorFor(model => model.UnitsAvailable, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UnitsAvailable, "", new { @class = "text-danger" })
+                    </div>
 
-                        <div class="form-group">
-                            <small class="form-text text-muted">@Html.LabelFor(model => model.AcceptVoucher)</small>
-                            @Html.EnumDropDownListFor(model => model.AcceptVoucher, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.AcceptVoucher, "", new { @class = "text-danger" })
-                        </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted">@Html.LabelFor(model => model.AcceptVoucher)</small>
+                        @Html.EnumDropDownListFor(model => model.AcceptVoucher, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AcceptVoucher, "", new { @class = "text-danger" })
+                    </div>
 
-                        <div class="form-group">
-                            <small class="form-text text-muted">@Html.LabelFor(model => model.SectionType)</small>
-                            @Html.EnumDropDownListFor(model => model.SectionType, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.SectionType, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">@Html.ActionLink("Detailed Edit View", "Edit", new { id = Model.HousingId }, new { @class = "action-link" })</button>
-                            <button type="submit" class="btn btn-success">Save</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    }
-                </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted">@Html.LabelFor(model => model.SectionType)</small>
+                        @Html.EnumDropDownListFor(model => model.SectionType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SectionType, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">@Html.ActionLink("Detailed Edit View", "Edit", new { id = Model.HousingId }, new { @class = "action-link" })</button>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

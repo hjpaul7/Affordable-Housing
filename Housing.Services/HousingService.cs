@@ -4,9 +4,11 @@ using Housing_RedBadgeMVC.Models.ApplicationModels;
 using Housing_RedBadgeMVC.Models.HousingModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Housing_RedBadgeMVC.Services
 {
@@ -21,8 +23,10 @@ namespace Housing_RedBadgeMVC.Services
         }
 
         // Post
-        public bool CreateHousing(HousingCreate model)
+        public bool CreateHousing(HttpPostedFileBase file, HousingCreate model)
         {
+            model.Image = ConvertToBytes(file);
+
             var entity =
                 new Housing()
                 {
@@ -31,6 +35,7 @@ namespace Housing_RedBadgeMVC.Services
                     UnitsAvailable = model.UnitsAvailable,
                     AcceptVoucher = model.AcceptVoucher,
                     SectionType = model.SectionType,
+                    Image = model.Image
                 };
 
             
@@ -60,7 +65,8 @@ namespace Housing_RedBadgeMVC.Services
                             UnitsAvailable = e.UnitsAvailable,
                             AcceptVoucher = e.AcceptVoucher,
                             SectionType = e.SectionType,
-                            IsSafe = e.IsSafe
+                            IsSafe = e.IsSafe,
+                            Image = e.Image
                         }
                         );
                 
@@ -85,15 +91,18 @@ namespace Housing_RedBadgeMVC.Services
                     UnitsAvailable = entity.UnitsAvailable,
                     AcceptVoucher = entity.AcceptVoucher,
                     SectionType = entity.SectionType,
-                    IsSafe = entity.IsSafe
+                    IsSafe = entity.IsSafe,
+                    Image = entity.Image
                 };
                 return detailedHousing;
             }
         }
 
         // Update
-        public int UpdateHousingById(int id, HousingUpdate newHousing)
+        public int UpdateHousingById(HttpPostedFileBase file, int id, HousingUpdate newHousing)
         {
+            newHousing.Image = ConvertToBytes(file);
+
             using (var ctx = new ApplicationDbContext())
             {
                 Housing housing = ctx.Housings.Find(id);
@@ -106,14 +115,17 @@ namespace Housing_RedBadgeMVC.Services
                 housing.UnitsAvailable = newHousing.UnitsAvailable;
                 housing.AcceptVoucher = newHousing.AcceptVoucher;
                 housing.SectionType = newHousing.SectionType;
+                housing.Image = newHousing.Image;
                 if (ctx.SaveChanges() == 1)
                     return 0;
                 return 1;
             }
         }
 
-        public bool UpdateHousing(HousingUpdate model)
+        public bool UpdateHousing(HttpPostedFileBase file, HousingUpdate model)
         {
+            model.Image = ConvertToBytes(file);
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -127,6 +139,7 @@ namespace Housing_RedBadgeMVC.Services
                 entity.UnitsAvailable = model.UnitsAvailable;
                 entity.AcceptVoucher = model.AcceptVoucher;
                 entity.SectionType = model.SectionType;
+                entity.Image = model.Image;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -142,6 +155,25 @@ namespace Housing_RedBadgeMVC.Services
 
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+
+        public byte[] GetImageFromDB(int id)
+        {
+            using (var rvw = new ApplicationDbContext())
+            {
+                var q = from temp in rvw.Housings where temp.HousingId == id select temp.Image;
+                byte[] cover = q.First();
+                return cover;
+            }
+        }
+
+        public byte[] ConvertToBytes(HttpPostedFileBase image)
+        {
+            byte[] imageBytes = null;
+            BinaryReader reader = new BinaryReader(image.InputStream);
+            imageBytes = reader.ReadBytes((int)image.ContentLength);
+            return imageBytes;
         }
     }
 }

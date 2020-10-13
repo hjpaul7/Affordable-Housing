@@ -4,11 +4,15 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="create-housing-container">
+    <p style="color: white; font-size: 12px;">
+        Here you can view details about <b>Rating ID @Html.DisplayFor(model => model.Id)</b>.
+    </p>
+
+</div>
+<hr />
 
 <div>
-    <h4>RatingDetail</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.HousingId)
@@ -37,6 +41,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

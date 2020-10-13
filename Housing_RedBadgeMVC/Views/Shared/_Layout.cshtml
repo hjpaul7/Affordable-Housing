@@ -10,28 +10,26 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark" >
-            <div class="container">
-                <div class="navbar-header">
-                    @Html.ActionLink("IN Affordable Housing", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style="color: white"})
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="mr-auto navbar-nav">
-                        <li class="nav-item nav-link">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @style = "color: white" })</li>
-                        <li class="nav-item nav-link">@Html.ActionLink("Housing", "Index", "Housing", new { area = "" }, new { @style = "color: white" })</li>
-                        <li class="nav-item nav-link">@Html.ActionLink("Apply", "Index", "Application", new { area = "" }, new { @style = "color: white" })</li>
-                        <li class="nav-item nav-link">@Html.ActionLink("Rate Housing", "Index", "Rating", new { area = "" }, new { @style = "color: white" })</li>
-                        <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @style = "color: white" })</li>
-                        <li class="nav-item nav-link">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @style = "color: white" })</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" style="font-size: 14px; color: lightcoral">Affordable Housing Indiana</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="font-size: 12px;">
+                <li class="nav-item nav-link nav-hover">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @style = "color: white" })</li>
+                <li class="nav-item nav-link nav-hover">@Html.ActionLink("Housing", "Index", "Housing", new { area = "" }, new { @style = "color: white" })</li>
+                <li class="nav-item nav-link nav-hover">@Html.ActionLink("Apply", "Index", "Application", new { area = "" }, new { @style = "color: white" })</li>
+                <li class="nav-item nav-link nav-hover">@Html.ActionLink("Rate Housing", "Index", "Rating", new { area = "" }, new { @style = "color: white" })</li>
+                <li class="nav-item nav-link nav-hover">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @style = "color: white" })</li>
+                <li class="nav-item nav-link nav-hover">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @style = "color: white" })</li>
+            </ul>
+        </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer style="text-align: center">
             <p>&copy; @DateTime.Now.Year - Affordable Housing IN</p>
         </footer>
     </div>
@@ -41,3 +39,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

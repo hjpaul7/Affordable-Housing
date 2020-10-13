@@ -51,6 +51,8 @@ namespace Housing_RedBadgeMVC.Data
         [Required]
         public Section SectionType { get; set; }
 
+        public byte[] Image { get; set; }
+
 
 
         public enum Section {

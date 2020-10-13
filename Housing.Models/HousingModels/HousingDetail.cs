@@ -32,6 +32,8 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         [Display(Name = "Section Type")]
         public Section SectionType { get; set; }
 
+        public byte[] Image { get; set; }
+
         public List<ApplicationListItem> ApplicationListItems { get; set; } = new List<ApplicationListItem>();
     }
 }
