@@ -363,6 +363,10 @@
     <Content Include="Views\Shared\_Edit.cshtml" />
     <Content Include="Views\Shared\_Details.cshtml" />
     <Content Include="Views\Shared\_RatingEdit.cshtml" />
+    <Content Include="Views\Shared\_ApplicationCreate.cshtml" />
+    <Content Include="Views\Shared\_ApplicationEdit.cshtml" />
+    <Content Include="Views\Shared\_RatingCreate.cshtml" />
+    <Content Include="Views\Shared\_HousingCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

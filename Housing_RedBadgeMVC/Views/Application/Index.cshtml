@@ -2,60 +2,68 @@
 
 @{
     ViewBag.Title = "Index";
+    var listItem = new Housing_RedBadgeMVC.Models.ApplicationModels.ApplicationCreate();
 }
 
-    <div class="create-housing-container">
+    @*<div class="create-housing-container">
         <p style="color: white; font-size: 12px;">
-            Here you can view current applications for specific housing, if you'd like to fill out an application please click @Html.ActionLink("Apply For Housing", "Create", new { @style = "text-decoration: none" })
+            Here you can view current applications for specific housing, if you'd like to fill out an application please click @Html.ActionLink("Apply for Housing", "Create", new { @style = "text-decoration: none" })
         </p>
 
-    </div>
+    </div>*@
+
+   
+            @Html.Partial("_ApplicationCreate", listItem)
+        
 
 
+    <table class="table table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HousingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthlyIncome)
+            </th>
+            <th></th>
+        </tr>
 
-<table class="table table-dark">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.HousingId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplicantId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MonthlyIncome)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+           
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HousingId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthlyIncome)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "link-style" })*@ 
+                    @Html.Partial("_ApplicationEdit", item)
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "link-style" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "link-style" })
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HousingId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApplicantId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MonthlyIncome)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "link-style" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "link-style" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "link-style" })
-        </td>
-    </tr>
-}
+    </table>
 
-</table>

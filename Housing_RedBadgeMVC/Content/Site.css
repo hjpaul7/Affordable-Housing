@@ -2,6 +2,22 @@
     padding-bottom: 20px;
 }
 
+
+/*#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://besthqwallpapers.com/Uploads/29-6-2019/98440/indianapolis-4k-modern-buildings-sunset-indiana.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.6;
+    filter: alpha(opacity=40);
+    z-index: 99;
+}*/
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -22,11 +38,12 @@ textarea {
     max-width: 280px;
 }
 
+
 .create-housing-container {
     margin-top: 20px;
     background-color: black;
     opacity: 0.6;
-    border-radius: 3px;
+    border-radius: 3px 3px 0px 0px;
     padding: 10px;
 }
 

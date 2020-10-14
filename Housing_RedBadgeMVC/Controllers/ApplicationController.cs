@@ -23,6 +23,9 @@ namespace Housing_RedBadgeMVC.Controllers
             var service = new ApplicationService(userId);
             var model = service.GetApplication();
 
+            var housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
+            ViewBag.Housings = housings;
+
 
             return View(model);
         }
@@ -30,6 +33,10 @@ namespace Housing_RedBadgeMVC.Controllers
         // Get
         public ActionResult Create()
         {
+            //IEnumerable<SelectListItem> housings = db.Housings.Select(
+            //b => new SelectListItem { Value = b.HousingId, Text = b.Name }).ToString();
+            //ViewBag.Housings = housings;
+
             var housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
             ViewBag.Housings = housings;
             return View();
@@ -60,7 +67,7 @@ namespace Housing_RedBadgeMVC.Controllers
             };
             ModelState.AddModelError("", "Your Application could not be added");
 
-            return View(model);
+            return RedirectToAction("Index");
         }
 
 

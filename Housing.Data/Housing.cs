@@ -25,6 +25,10 @@ namespace Housing_RedBadgeMVC.Data
 
         public virtual ICollection<SafetyRating> Ratings { get; set; } = new List<SafetyRating>();
 
+        
+
+        
+
         [Required]
         public Voucher AcceptVoucher { get; set; }
 

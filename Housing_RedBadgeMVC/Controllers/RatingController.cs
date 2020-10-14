@@ -23,6 +23,9 @@ namespace Housing_RedBadgeMVC.Controllers
             var service = new RatingService(userId);
             var model = service.GetRating();
 
+            var housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
+            ViewBag.Housings = housings;
+
             return View(model);
         }
 
@@ -53,7 +56,8 @@ namespace Housing_RedBadgeMVC.Controllers
 
             ModelState.AddModelError("", "Your Safety Rating could not be added");
 
-            return View(model);
+            //return View(model);
+            return RedirectToAction("Index");
         }
 
 

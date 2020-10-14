@@ -32,6 +32,7 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         public Section SectionType { get; set; }
 
         public byte[] Image { get; set; }
+
         public string Section { get
             {
                 if (SectionType == Data.Housing.Section.Section8)

@@ -1,4 +1,5 @@
-﻿using Housing_RedBadgeMVC.Models;
+﻿using Housing_RedBadgeMVC.Data;
+using Housing_RedBadgeMVC.Models;
 using Housing_RedBadgeMVC.Models.HousingModels;
 using Housing_RedBadgeMVC.Services;
 using Microsoft.AspNet.Identity;
@@ -13,6 +14,9 @@ namespace Housing_RedBadgeMVC.Controllers
     [Authorize]
     public class HousingController : Controller
     {
+
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Housing
         public ActionResult Index()
         {
@@ -20,12 +24,17 @@ namespace Housing_RedBadgeMVC.Controllers
             var service = new HousingService(userId);
             var model = service.GetHousing();
 
+            var housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
+            ViewBag.Housings = housings;
+
             return View(model);
         }
 
         // Get
         public ActionResult Create()
         {
+            IEnumerable<SelectListItem> housings = new SelectList(_db.Housings.ToList(), "HousingId", "Name");
+            ViewBag.Housings = housings;
             return View();
         }
 
@@ -68,7 +77,8 @@ namespace Housing_RedBadgeMVC.Controllers
 
             ModelState.AddModelError("", "Your Housing could not be added");
 
-            return View(model);
+            //return View(model);
+            return RedirectToAction("Index");
         }
 
 

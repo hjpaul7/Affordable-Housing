@@ -9,6 +9,9 @@ namespace Housing_RedBadgeMVC.Models.RatingModels
 {
    public class RatingCreate
     {
+        [Key]
+        public int Id { get; set; }
+
         [Required]
         public int HousingId { get; set; }
 

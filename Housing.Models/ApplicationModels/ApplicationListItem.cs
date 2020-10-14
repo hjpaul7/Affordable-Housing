@@ -29,5 +29,8 @@ namespace Housing_RedBadgeMVC.Models.ApplicationModels
 
         [Display(Name = "Is available")]
         public bool IsAvailable { get; set; }
+
+        [Display(Name ="Units Requested")]
+        public int UnitsRequested { get; set; }
     }
 }

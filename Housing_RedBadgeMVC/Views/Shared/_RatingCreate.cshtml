@@ -1,0 +1,92 @@
+﻿
+@model Housing_RedBadgeMVC.Models.RatingModels.RatingCreate
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="create-housing-container">
+            <p style="color: white; font-size: 12px;">
+                Here you can view current ratings for specific housing, if you would like to add a Rating please click <a class="text" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:lightcoral; font-size: 12px; cursor: pointer; text-decoration: none;">
+                    Add a Rating
+                </a>
+            </p>
+
+        </div>
+
+        <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+
+                @using (Html.BeginForm("Create", "Rating", new { id = Model.Id}))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 bd-content" style="border: 1px solid lightgray;">
+                                <div class="form-group pt-4">
+                                    @Html.LabelFor(model => model.HousingId, "Housing", htmlAttributes: new { @class = "control-label " })
+                                    @Html.DropDownList("HousingId", (IEnumerable<SelectListItem>)ViewBag.Housings, htmlAttributes: new { @class = "custom-select" })
+                                    @Html.ValidationMessageFor(model => model.HousingId, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Create" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+@*@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>RatingCreate</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   
+        <div class="form-group">
+            @Html.LabelFor(model => model.HousingId, "Housing", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("HousingId", (IEnumerable<SelectListItem>)ViewBag.Housings, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.HousingId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

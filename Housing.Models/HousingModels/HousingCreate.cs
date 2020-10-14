@@ -10,6 +10,9 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
 {
     public class HousingCreate
     {
+        [Key]
+        public int HousingId { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -32,5 +35,7 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         public Section SectionType { get; set; }
 
         public byte[] Image { get; set; }
+
+      
     }
 }

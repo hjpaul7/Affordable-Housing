@@ -35,5 +35,6 @@ namespace Housing_RedBadgeMVC.Models.HousingModels
         public byte[] Image { get; set; }
 
         public List<ApplicationListItem> ApplicationListItems { get; set; } = new List<ApplicationListItem>();
+        public List<HousingListItem> HousingListItems { get; set; } = new List<HousingListItem>();
     }
 }

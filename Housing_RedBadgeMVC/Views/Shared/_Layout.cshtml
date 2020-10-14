@@ -15,7 +15,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav" style="font-size: 12px;">
                 <li class="nav-item nav-link nav-hover">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @style = "color: white" })</li>
                 <li class="nav-item nav-link nav-hover">@Html.ActionLink("Housing", "Index", "Housing", new { area = "" }, new { @style = "color: white" })</li>
@@ -24,19 +24,22 @@
                 <li class="nav-item nav-link nav-hover">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @style = "color: white" })</li>
                 <li class="nav-item nav-link nav-hover">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @style = "color: white" })</li>
             </ul>
+            @Html.Partial("_LoginPartial")
         </div>
     </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer style="text-align: center">
-            <p>&copy; @DateTime.Now.Year - Affordable Housing IN</p>
-        </footer>
-    </div>
+    <div id="background">
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer style="text-align: center">
+                <p>&copy; @DateTime.Now.Year - Affordable Housing IN</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
 </body>
 </html>
 

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Housing_RedBadgeMVC.Models.HousingModels.HousingListItem>
 
-<div class="create-housing-container">
-<p style="color: white; font-size: 12px;">
-    Here you can view current available housing in central Indiana detailing: Address, Units Available, Unemployment Voucher Acceptance, Affordable Section Type, Safety Rating. If you would like to add a new Housing listing, please click @Html.ActionLink("Add Housing", "Create", new { @style = "text-decoration: none" } )
-</p>
+@{ 
+    ViewBag.Title = "Index";
+    var listItem = new Housing_RedBadgeMVC.Models.HousingModels.HousingCreate();
+}
 
-</div>
+        @Html.Partial("_HousingCreate", listItem)
 
 <div class="row">
     @foreach (var item in Model)
