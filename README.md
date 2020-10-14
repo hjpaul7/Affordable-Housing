@@ -1,5 +1,4 @@
-# Housing_RedBadgeBook Wormz API: Affordable Housing IN Red Badge
-=============================================
+
 
 [![N|Solid](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShNr_qvEhshsb5yO_f4jm061arTxC6JtT6mA&usqp=CAU)](https://visualstudio.microsoft.com/vs/community/ "VS Community 2019")
 
